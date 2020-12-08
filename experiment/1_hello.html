@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="../jspsych/jspsych.js"></script>
+    <script src="../jspsych/plugins/jspsych-html-keyboard-response.js"></script>
+    <link rel="stylesheet" href="../css/jspsych.css">
+    </link>
+</head>
+
+<body></body>
+<script>
+
+    var trial = {
+        type: 'html-keyboard-response', // 試行のタイプ指定
+        stimulus: 'hello world!', // 提示する刺激
+        choices: ['f', 'j'], // 入力キーの指定
+        stimulus_duration: 1000,
+        trial_duration: 2000,
+        response_ends_trial: false,
+    }
+
+    jsPsych.init({
+        timeline: [trial], // 提示順序の指定
+    });
+</script>
+
+</html>
