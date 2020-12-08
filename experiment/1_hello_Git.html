@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://K104kaz/jsPsychSheet/jspsych/jspsych.js"></script>
+    <script src="https://K104kaz/jsPsychSheet/jspsych/plugins/jspsych-html-keyboard-response.js"></script>
+    <link rel="stylesheet" href="https://K104kaz/jsPsychSheet/jspsych/css/jspsych.css">
+    </link>
+</head>
+
+<body></body>
+<script>
+
+    var trial = {
+        type: 'html-keyboard-response',
+        stimulus: 'hello Git world!',
+        choices: ['f', 'j'],
+        stimulus_duration: 1000,
+        trial_duration: 3000,
+        response_ends_trial: true,
+    }
+
+    jsPsych.init({
+        timeline: [trial],
+        show_progress_bar: true,
+        on_finish: function () {
+            jsPsychSheet.uploadData(jsPsych.data.get().csv());
+        }
+    });
+</script>
+
+</html>
